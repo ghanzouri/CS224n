@@ -181,7 +181,7 @@ class NMT(nn.Module):
         e = self.model_embeddings.embed_size
         X = torch.zeros(src_len, b, e)
         cuda0 = torch.device('cuda:0')
-        X.to(cuda0)
+        X = X.to(cuda0)
 
         for i in range(src_len):
             for j in range(b):
